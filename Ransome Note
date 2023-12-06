@@ -1,0 +1,31 @@
+//My Code
+var canConstruct = function(ransomNote, magazine) {
+    const alphabetCount = Array.from({ length: 26 }, () => 0);// keep an array of length 26 with all 0s
+    for (let char of magazine) {
+        const charCode = char.charCodeAt(0);
+        if (charCode >= 97 && charCode <= 122)// ascii coded to check the lower case alphabet
+        {  
+            alphabetCount[charCode - 97]++; // store the no.of occurences of each alphabet of magazine in alphabetCount by incerementing correct index value
+        }
+    }
+    for(let char of ransomNote){
+        const charCode = char.charCodeAt(0);
+        if (charCode >= 97 && charCode <= 122) { 
+            alphabetCount[charCode - 97]--; 
+          # now decrement the occurence of each alphabet in magazine's alphabetCount to find the matching chars if there are equal or less no.of alphabet in ransome than in magazin the value will always be positive 
+        }
+    }
+    let negativeCount = 0;
+    for(let i=0;i<alphabetCount.length;i++){
+        if(alphabetCount[i] < 0 ){
+            negativeCount +=1; //check for no.of negative occurences
+        }
+    }
+    if(negativeCount>=1){
+        return false; // even if it has a single negative occurance return false
+    }
+    else{
+        return true;
+    }
+
+};
