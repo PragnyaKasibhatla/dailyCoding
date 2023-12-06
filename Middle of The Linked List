@@ -1,3 +1,7 @@
+//Note my idea
+//Found it in solutions, Liked the approach
+//My idea was to copy all the nodes to an array say "arr" and retrun arr.slice(arr.length/2)
+
 var middleNode = function(head) {
     let fast = slow = head;
     while (fast && fast.next) {
