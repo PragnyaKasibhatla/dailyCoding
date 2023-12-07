@@ -1,0 +1,16 @@
+var buildArray = function(nums) {
+    let permutationArray = [];
+   for(let i = 0;i<nums.length;i++){
+       permutationArray[i] = nums[nums[i]];
+   } 
+   return permutationArray;
+};
+
+//alternate
+var buildArray = function(nums) {
+    let permutationArray = [];
+   for(let i = 0;i<nums.length;i++){
+       permutationArray[i] = nums[nums[i]];
+   } 
+   return permutationArray;
+};
